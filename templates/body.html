@@ -1,0 +1,170 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/styles.css') }}" />
+    <title>Final - Gmail </title>
+
+    <script>
+      // Assuming row is a variable containing your data
+     
+  
+      /* Check the condition and apply the highlight class if necessary
+      if (row && row[1] === false) {
+          var divToHighlight = document.getElementById('yourDiv');
+          if (divToHighlight) {
+              divToHighlight.classList.add('highlight');
+          }
+      }*/
+     
+  </script>
+  <style>
+        .justified-text {
+            text-align: justify;
+        }
+  
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+
+    #email-view {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color:#f1f1f1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #email-header {
+        background-color: 	#71afe5;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #email-content {
+        padding: 20px;
+    }
+
+    #email-content p {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+</style>
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header">
+      <div class="header__left">
+        <span class="material-icons"> menu </span>
+        <img
+          src="{{ url_for('static',filename='LOGO.jpg') }}"
+          alt=""
+        />
+      </div>
+
+      <div class="header__middle">
+        <span class="material-icons"> search </span>
+        <input type="text" placeholder="Search mail" />
+        <span class="material-icons"> arrow_drop_down </span>
+      </div>
+
+      <div class="header__right">
+        <span class="material-icons"> delete </span>
+   
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+    <div class="main__body">
+            <!-- Sidebar Starts -->
+            <div class="sidebar">
+                <a href="{{ url_for('index') }}"> <div class="sidebarOption">
+                  <span class="material-icons"> inbox </span>
+                  <h3>Inbox</h3>
+                </div></a>
+        
+                <div class="sidebarOption">
+                  <span class="material-icons">delete</span>
+                  <h3>Spam</h3>
+                </div>
+        
+        
+            
+        
+              </br>
+   
+
+    
+        <div class="sidebar__footer">
+          <div class="sidebar__footerIcons">
+            <span class="material-icons"> person </span>
+            <span class="material-icons"> duo </span>
+            <span class="material-icons"> phone </span>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Email List Starts -->
+      <div class="emailList">
+        <!-- Settings Starts 
+        <div class="emailList__settings">
+          <div class="emailList__settingsLeft">
+            <input type="checkbox" />
+            <span class="material-icons"> arrow_drop_down </span>
+            <span class="material-icons"> redo </span>
+            <span class="material-icons"> more_vert </span>
+          </div>
+          <div class="emailList__settingsRight">
+            <span class="material-icons"> chevron_left </span>
+            <span class="material-icons"> chevron_right </span>
+            <span class="material-icons"> delete </span>
+          </div>
+        </div>
+       Settings Ends -->
+
+        <!-- Section Starts -->
+        <div class="emailList__sections">
+          <div class="section section__selected">
+            <span class="material-icons">
+                visibility
+                </span>
+            <h4>View</h4>
+          </div>
+
+        
+        </div>
+        <!-- Section Ends -->
+
+        <!-- Email List rows starts -->
+        <div class="emailList__list">
+         <div id="email-view">
+        <div id="email-header">
+            <span> <p><strong>From:</strong>  {{email_data[0][1]}}</p></span>
+            <br>
+            <p><strong>Subject: </strong>{{email_data[0][2]}}</p>
+        </div>
+
+        <div id="email-content">
+            <lef>  <dd>  <p class="justified-text"> {{email_data[0][3]}}</p></dd></lef>
+        </div>
+    </div>
+
+        </div>
+        <!-- Email List rows Ends -->
+      </div>
+      <!-- Email List Ends -->
+    </div>
+    <!-- Main Body Ends -->
+  </body>
+</html>
