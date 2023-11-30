@@ -9,8 +9,8 @@ app = Flask(__name__)
 # Email server configuration
 EMAIL_HOST = 'imap.gmail.com'
 EMAIL_PORT = 993  # Change this to the appropriate port for your mail server
-EMAIL_USERNAME = 'pavan.sanjay20@vit.edu'
-EMAIL_PASSWORD = 'cvbntymate@123AS'
+EMAIL_USERNAME = 'Your_Email'
+EMAIL_PASSWORD = 'Your_Email_Password'
 
 
 # MySQL database configuration
